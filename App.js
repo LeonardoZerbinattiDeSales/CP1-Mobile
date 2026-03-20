@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { StyleSheet,T ext, TextInput, View, ScrollView, Alert, TouchableOpacity, } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TextInput, View, ScrollView, Alert, TouchableOpacity, } from 'react-native';
 
 export default function App() {
   const [nome, setNome] = useState('');
@@ -33,11 +32,13 @@ export default function App() {
       <StatusBar style="light" />
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <Text style={styles.titulo}>Formulário de Cadastro</Text>
+        <Text style={styles.textoTopo}>
+          Preencha os campos abaixo e visualize os dados enviados.
+        </Text>
+
         <View style={styles.card}>
-          <Text style={styles.titulo}>Formulário de Cadastro</Text>
-          <Text style={styles.textoTopo}>
-            Preencha os campos abaixo e visualize os dados enviados.
-          </Text>
+          <Text style={styles.subtitulo}>Seus Dados</Text>
 
           <Text style={styles.label}>Nome</Text>
           <TextInput
@@ -118,23 +119,15 @@ const styles = StyleSheet.create({
     paddingTop: 45,
     paddingBottom: 40,
   },
-  card: {
-    backgroundColor: '#111111',
-    borderRadius: 20,
-    padding: 20,
-    marginBottom: 24,
-    borderWidth: 1,
-    borderColor: '#00F5FF',
-  },
   titulo: {
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#FFFFFF',
+    marginBottom: 8,
     textShadowColor: '#00F5FF',
     textShadowOffset: { width: 0, height: 0 },
     textShadowRadius: 14,
-    marginBottom: 8,
   },
   textoTopo: {
     fontSize: 15,
@@ -142,6 +135,28 @@ const styles = StyleSheet.create({
     color: '#D1D5DB',
     marginBottom: 24,
     lineHeight: 22,
+  },
+  card: {
+    backgroundColor: '#111111',
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 24,
+    borderWidth: 1,
+    borderColor: '#07f7ff',
+    shadowColor: '#00F5FF',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.35,
+    shadowRadius: 10,
+    elevation: 8,
+  },
+  subtitulo: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginBottom: 14,
+    textShadowColor: '#00F5FF',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 8,
   },
   label: {
     fontSize: 15,
@@ -195,6 +210,11 @@ const styles = StyleSheet.create({
     padding: 20,
     borderWidth: 1,
     borderColor: '#FFFFFF',
+    shadowColor: '#00F5FF',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
+    elevation: 6,
   },
   subtituloResultado: {
     fontSize: 22,
@@ -213,6 +233,6 @@ const styles = StyleSheet.create({
   },
   negrito: {
     fontWeight: 'bold',
-    color: '#08F4FC',
+    color: '#08f4fc',
   },
 });
