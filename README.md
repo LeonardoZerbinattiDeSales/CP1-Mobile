@@ -38,3 +38,6 @@ O projeto foi desenvolvido de forma simples, centralizando toda a lógica princi
 1. Clone este repositório:
    ```bash
    git clone https://github.com/LeonardoZerbinattiDeSales/CP1-Mobile.git
+
+## Link do Vídeo
+[Assista ao vídeo aqui](https://youtu.be/uMLjyxXm3uM)
