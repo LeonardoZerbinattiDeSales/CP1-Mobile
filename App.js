@@ -18,50 +18,52 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
 
-      <View style={styles.card}>
-        <Text style={styles.titulo}>Formulário de Cadastro</Text>
-        <Text style={styles.textoTopo}>
-          Preencha os campos abaixo.
-        </Text>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.card}>
+          <Text style={styles.titulo}>Formulário de Cadastro</Text>
+          <Text style={styles.textoTopo}>
+            Preencha os campos abaixo.
+          </Text>
 
-        <Text style={styles.label}>Nome</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu nome"
-          placeholderTextColor="#9CA3AF"
-          value={nome}
-          onChangeText={setNome}
-        />
+          <Text style={styles.label}>Nome</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite seu nome"
+            placeholderTextColor="#9CA3AF"
+            value={nome}
+            onChangeText={setNome}
+          />
 
-        <Text style={styles.label}>Curso</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite seu curso"
-          placeholderTextColor="#9CA3AF"
-          value={curso}
-          onChangeText={setCurso}
-        />
+          <Text style={styles.label}>Curso</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite seu curso"
+            placeholderTextColor="#9CA3AF"
+            value={curso}
+            onChangeText={setCurso}
+          />
 
-        <Text style={styles.label}>Disciplina</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite sua disciplina"
-          placeholderTextColor="#9CA3AF"
-          value={disciplina}
-          onChangeText={setDisciplina}
-        />
+          <Text style={styles.label}>Disciplina</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Digite sua disciplina"
+            placeholderTextColor="#9CA3AF"
+            value={disciplina}
+            onChangeText={setDisciplina}
+          />
 
-        <Text style={styles.label}>Descrição</Text>
-        <TextInput
-          style={styles.inputDescricao}
-          placeholder="Fale um pouco sobre você"
-          placeholderTextColor="#9CA3AF"
-          value={descricao}
-          onChangeText={setDescricao}
-          multiline={true}
-          numberOfLines={4}
-        />
-      </View>
+          <Text style={styles.label}>Descrição</Text>
+          <TextInput
+            style={styles.inputDescricao}
+            placeholder="Fale um pouco sobre você"
+            placeholderTextColor="#9CA3AF"
+            value={descricao}
+            onChangeText={setDescricao}
+            multiline={true}
+            numberOfLines={4}
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -70,8 +72,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000000',
-    justifyContent: 'center',
-    padding: 20,
+  },
+  scrollContainer: {
+    padding: 22,
+    paddingTop: 45,
+    paddingBottom: 40,
   },
   card: {
     backgroundColor: '#111111',
@@ -81,20 +86,21 @@ const styles = StyleSheet.create({
     borderColor: '#00F5FF',
   },
   titulo: {
-    fontSize: 28,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#FFFFFF',
     textShadowColor: '#00F5FF',
     textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 12,
-    marginBottom: 10,
+    textShadowRadius: 14,
+    marginBottom: 8,
   },
   textoTopo: {
-    fontSize: 16,
+    fontSize: 15,
     textAlign: 'center',
     color: '#D1D5DB',
-    marginBottom: 20,
+    marginBottom: 24,
+    lineHeight: 22,
   },
   label: {
     fontSize: 15,
