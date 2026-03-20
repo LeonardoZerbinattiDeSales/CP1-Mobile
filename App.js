@@ -15,7 +15,17 @@ export default function App() {
   }, []);
 
   function enviarDados() {
-    console.log('Botão clicado');
+    if (!nome || !curso || !disciplina || !descricao) {
+      Alert.alert('Atenção', 'Preencha todos os campos.');
+      return;
+    }
+
+    setDadosEnviados({
+      nome,
+      curso,
+      disciplina,
+      descricao,
+    });
   }
 
   return (
