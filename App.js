@@ -36,7 +36,7 @@ export default function App() {
         <View style={styles.card}>
           <Text style={styles.titulo}>Formulário de Cadastro</Text>
           <Text style={styles.textoTopo}>
-            Preencha os campos abaixo.
+            Preencha os campos abaixo e visualize os dados enviados.
           </Text>
 
           <Text style={styles.label}>Nome</Text>
@@ -81,6 +81,28 @@ export default function App() {
             <Text style={styles.textoBotao}>Enviar Cadastro</Text>
           </TouchableOpacity>
         </View>
+
+        {dadosEnviados && (
+          <View style={styles.cardResultado}>
+            <Text style={styles.subtituloResultado}>Dados Enviados</Text>
+
+            <Text style={styles.resultado}>
+              <Text style={styles.negrito}>Nome:</Text> {dadosEnviados.nome}
+            </Text>
+
+            <Text style={styles.resultado}>
+              <Text style={styles.negrito}>Curso:</Text> {dadosEnviados.curso}
+            </Text>
+
+            <Text style={styles.resultado}>
+              <Text style={styles.negrito}>Disciplina:</Text> {dadosEnviados.disciplina}
+            </Text>
+
+            <Text style={styles.resultado}>
+              <Text style={styles.negrito}>Descrição:</Text> {dadosEnviados.descricao}
+            </Text>
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -100,6 +122,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#111111',
     borderRadius: 20,
     padding: 20,
+    marginBottom: 24,
     borderWidth: 1,
     borderColor: '#00F5FF',
   },
@@ -165,5 +188,31 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 17,
     fontWeight: 'bold',
+  },
+  cardResultado: {
+    backgroundColor: '#0A0A0A',
+    borderRadius: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#FFFFFF',
+  },
+  subtituloResultado: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginBottom: 14,
+    textShadowColor: '#00F5FF',
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 10,
+  },
+  resultado: {
+    fontSize: 16,
+    color: '#E5E7EB',
+    marginBottom: 10,
+    lineHeight: 24,
+  },
+  negrito: {
+    fontWeight: 'bold',
+    color: '#08F4FC',
   },
 });
