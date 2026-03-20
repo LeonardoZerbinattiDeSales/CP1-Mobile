@@ -17,11 +17,50 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
+
       <View style={styles.card}>
         <Text style={styles.titulo}>Formulário de Cadastro</Text>
         <Text style={styles.textoTopo}>
-          Estados criados com useState e inicialização com useEffect.
+          Preencha os campos abaixo.
         </Text>
+
+        <Text style={styles.label}>Nome</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite seu nome"
+          placeholderTextColor="#9CA3AF"
+          value={nome}
+          onChangeText={setNome}
+        />
+
+        <Text style={styles.label}>Curso</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite seu curso"
+          placeholderTextColor="#9CA3AF"
+          value={curso}
+          onChangeText={setCurso}
+        />
+
+        <Text style={styles.label}>Disciplina</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite sua disciplina"
+          placeholderTextColor="#9CA3AF"
+          value={disciplina}
+          onChangeText={setDisciplina}
+        />
+
+        <Text style={styles.label}>Descrição</Text>
+        <TextInput
+          style={styles.inputDescricao}
+          placeholder="Fale um pouco sobre você"
+          placeholderTextColor="#9CA3AF"
+          value={descricao}
+          onChangeText={setDescricao}
+          multiline={true}
+          numberOfLines={4}
+        />
       </View>
     </SafeAreaView>
   );
@@ -55,5 +94,35 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     color: '#D1D5DB',
+    marginBottom: 20,
+  },
+  label: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#FFFFFF',
+    marginBottom: 6,
+    marginTop: 12,
+  },
+  input: {
+    backgroundColor: '#1A1A1A',
+    borderWidth: 1,
+    borderColor: '#00F5FF',
+    borderRadius: 14,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    fontSize: 16,
+    color: '#FFFFFF',
+  },
+  inputDescricao: {
+    backgroundColor: '#1A1A1A',
+    borderWidth: 1,
+    borderColor: '#00F5FF',
+    borderRadius: 14,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    fontSize: 16,
+    color: '#FFFFFF',
+    height: 110,
+    textAlignVertical: 'top',
   },
 });
