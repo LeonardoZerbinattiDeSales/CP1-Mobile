@@ -14,6 +14,10 @@ export default function App() {
     console.log('Aplicativo iniciado com sucesso!');
   }, []);
 
+  function enviarDados() {
+    console.log('Botão clicado');
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
@@ -62,6 +66,10 @@ export default function App() {
             multiline={true}
             numberOfLines={4}
           />
+
+          <TouchableOpacity style={styles.botao} onPress={enviarDados}>
+            <Text style={styles.textoBotao}>Enviar Cadastro</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -130,5 +138,22 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     height: 110,
     textAlignVertical: 'top',
+  },
+  botao: {
+    backgroundColor: '#00F5FF',
+    marginTop: 22,
+    paddingVertical: 15,
+    borderRadius: 14,
+    alignItems: 'center',
+    shadowColor: '#00F5FF',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.5,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+  textoBotao: {
+    color: '#000000',
+    fontSize: 17,
+    fontWeight: 'bold',
   },
 });
