@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  ScrollView,
-  Alert,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet,T ext, TextInput, View, ScrollView, Alert, TouchableOpacity, } from 'react-native';
 
 export default function App() {
+  const [nome, setNome] = useState('');
+  const [curso, setCurso] = useState('');
+  const [disciplina, setDisciplina] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [dadosEnviados, setDadosEnviados] = useState(null);
+
+  useEffect(() => {
+    console.log('Aplicativo iniciado com sucesso!');
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
       <View style={styles.card}>
         <Text style={styles.titulo}>Formulário de Cadastro</Text>
         <Text style={styles.textoTopo}>
-          Estrutura inicial do aplicativo.
+          Estados criados com useState e inicialização com useEffect.
         </Text>
       </View>
     </SafeAreaView>
